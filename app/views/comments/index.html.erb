@@ -1,0 +1,16 @@
+<h1>Comments#index</h1>
+
+<%= form_for [@post, Comment.new] do |f| %>
+<%= f.text_area :content %>
+<%= f.submit "Crear" %>
+<% end %>
+  
+
+
+<ul>
+	<% @comments.each do |comment| %>
+		<li> <%= comment.content %><%= link_to "editar", edit_post_comment_path(@post, comment) %></li>
+	<% end %>
+</ul>
+
+	
